@@ -51,7 +51,7 @@
             id_carte_txt.BorderStyle = BorderStyle.FixedSingle;
             id_carte_txt.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             id_carte_txt.ForeColor = Color.White;
-            id_carte_txt.Location = new Point(250, 370);
+            id_carte_txt.Location = new Point(229, 266);
             id_carte_txt.Name = "id_carte_txt";
             id_carte_txt.Size = new Size(307, 28);
             id_carte_txt.TabIndex = 0;
@@ -67,7 +67,7 @@
             delete_btn.IconChar = FontAwesome.Sharp.IconChar.Trash;
             delete_btn.IconColor = Color.White;
             delete_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            delete_btn.Location = new Point(250, 433);
+            delete_btn.Location = new Point(229, 329);
             delete_btn.Name = "delete_btn";
             delete_btn.Size = new Size(134, 66);
             delete_btn.TabIndex = 2;
@@ -81,11 +81,11 @@
             // 
             single_lbl.Anchor = AnchorStyles.None;
             single_lbl.AutoSize = true;
-            single_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            single_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
             single_lbl.ForeColor = Color.White;
-            single_lbl.Location = new Point(290, 313);
+            single_lbl.Location = new Point(269, 209);
             single_lbl.Name = "single_lbl";
-            single_lbl.Size = new Size(205, 29);
+            single_lbl.Size = new Size(225, 29);
             single_lbl.TabIndex = 3;
             single_lbl.Text = "Introdu ID-ul Cărții";
             single_lbl.TextAlign = ContentAlignment.MiddleCenter;
@@ -98,7 +98,7 @@
             del1_ck.CheckState = CheckState.Checked;
             del1_ck.Font = new Font("Microsoft Sans Serif", 10.8F);
             del1_ck.ForeColor = Color.White;
-            del1_ck.Location = new Point(290, 200);
+            del1_ck.Location = new Point(269, 96);
             del1_ck.Name = "del1_ck";
             del1_ck.Size = new Size(209, 26);
             del1_ck.TabIndex = 4;
@@ -110,11 +110,11 @@
             // 
             metoda_lbl.Anchor = AnchorStyles.None;
             metoda_lbl.AutoSize = true;
-            metoda_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            metoda_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             metoda_lbl.ForeColor = Color.White;
-            metoda_lbl.Location = new Point(290, 148);
+            metoda_lbl.Location = new Point(269, 44);
             metoda_lbl.Name = "metoda_lbl";
-            metoda_lbl.Size = new Size(224, 29);
+            metoda_lbl.Size = new Size(242, 29);
             metoda_lbl.TabIndex = 3;
             metoda_lbl.Text = "Metoda de ștergere";
             // 
@@ -124,7 +124,7 @@
             delmore_ck.AutoSize = true;
             delmore_ck.Font = new Font("Microsoft Sans Serif", 10.8F);
             delmore_ck.ForeColor = Color.White;
-            delmore_ck.Location = new Point(290, 232);
+            delmore_ck.Location = new Point(269, 128);
             delmore_ck.Name = "delmore_ck";
             delmore_ck.Size = new Size(255, 26);
             delmore_ck.TabIndex = 4;
@@ -138,7 +138,7 @@
             queryOutput_lbl.Dock = DockStyle.Bottom;
             queryOutput_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             queryOutput_lbl.ForeColor = Color.White;
-            queryOutput_lbl.Location = new Point(0, 5);
+            queryOutput_lbl.Location = new Point(0, 6);
             queryOutput_lbl.Name = "queryOutput_lbl";
             queryOutput_lbl.Size = new Size(0, 29);
             queryOutput_lbl.TabIndex = 3;
@@ -147,11 +147,11 @@
             // 
             multi_lbl.Anchor = AnchorStyles.None;
             multi_lbl.AutoSize = true;
-            multi_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            multi_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
             multi_lbl.ForeColor = Color.White;
-            multi_lbl.Location = new Point(264, 269);
+            multi_lbl.Location = new Point(243, 165);
             multi_lbl.Name = "multi_lbl";
-            multi_lbl.Size = new Size(281, 29);
+            multi_lbl.Size = new Size(309, 29);
             multi_lbl.TabIndex = 3;
             multi_lbl.Text = "Introdu intervalul ID-urilor";
             multi_lbl.TextAlign = ContentAlignment.MiddleCenter;
@@ -163,7 +163,7 @@
             range1_txt.BorderStyle = BorderStyle.FixedSingle;
             range1_txt.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             range1_txt.ForeColor = Color.White;
-            range1_txt.Location = new Point(250, 352);
+            range1_txt.Location = new Point(229, 248);
             range1_txt.Name = "range1_txt";
             range1_txt.Size = new Size(307, 28);
             range1_txt.TabIndex = 0;
@@ -175,7 +175,7 @@
             range2_txt.BorderStyle = BorderStyle.FixedSingle;
             range2_txt.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             range2_txt.ForeColor = Color.White;
-            range2_txt.Location = new Point(250, 386);
+            range2_txt.Location = new Point(229, 282);
             range2_txt.Name = "range2_txt";
             range2_txt.Size = new Size(307, 28);
             range2_txt.TabIndex = 0;
@@ -184,11 +184,11 @@
             // 
             range_lbl.Anchor = AnchorStyles.None;
             range_lbl.AutoSize = true;
-            range_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            range_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
             range_lbl.ForeColor = Color.White;
-            range_lbl.Location = new Point(290, 298);
+            range_lbl.Location = new Point(269, 194);
             range_lbl.Name = "range_lbl";
-            range_lbl.Size = new Size(214, 29);
+            range_lbl.Size = new Size(234, 29);
             range_lbl.TabIndex = 3;
             range_lbl.Text = "(de ex. 100 și 200 )";
             range_lbl.TextAlign = ContentAlignment.MiddleCenter;
@@ -204,7 +204,7 @@
             save_btn.IconChar = FontAwesome.Sharp.IconChar.Check;
             save_btn.IconColor = Color.White;
             save_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            save_btn.Location = new Point(404, 433);
+            save_btn.Location = new Point(383, 329);
             save_btn.Name = "save_btn";
             save_btn.Size = new Size(153, 66);
             save_btn.TabIndex = 2;
@@ -219,9 +219,9 @@
             panel1.BackColor = Color.FromArgb(54, 54, 54);
             panel1.Controls.Add(queryOutput_lbl);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 550);
+            panel1.Location = new Point(0, 432);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 34);
+            panel1.Size = new Size(800, 35);
             panel1.TabIndex = 5;
             // 
             // DeleteForm
@@ -229,7 +229,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
-            ClientSize = new Size(800, 584);
+            ClientSize = new Size(800, 467);
             Controls.Add(panel1);
             Controls.Add(delmore_ck);
             Controls.Add(del1_ck);
