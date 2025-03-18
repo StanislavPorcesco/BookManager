@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,12 +56,12 @@ namespace GestiuneCarti.Forms
                             cmd.Parameters.Add("target", OracleDbType.Int32).Value = Convert.ToInt32(target_txt.Text);
                             cmd.Parameters.Add("id_carte", OracleDbType.Int32).Value = Convert.ToInt32(new_val_txt.Text);
 
-                            int rows = cmd.ExecuteNonQuery();
-                            queryOutput_lbl.Text = $"{rows} randuri au fost modificate";
+                            cmd.ExecuteNonQuery();
+                            queryOutput_lbl.Text = "Modificat cu succes!";
                         }
-
-                        
                     }
+
+                    //wokrs
                     if (title_ck.Checked)
                     {
                         checkIntegrity();
@@ -71,12 +72,12 @@ namespace GestiuneCarti.Forms
                             cmd.Parameters.Add("titlu", OracleDbType.Varchar2).Value = Convert.ToString(new_val_txt.Text);
                             cmd.Parameters.Add("target", OracleDbType.Int32).Value = Convert.ToInt32(target_txt.Text);
 
-                            int rows = cmd.ExecuteNonQuery();
-                            queryOutput_lbl.Text = $"{rows} randuri au fost afectate";
-
+                            cmd.ExecuteNonQuery();
+                            queryOutput_lbl.Text = "Modificat cu succes!";
                         }
                     }
 
+                    //works
                     if (limba_ck.Checked)
                     {
                         checkIntegrity();
@@ -84,15 +85,15 @@ namespace GestiuneCarti.Forms
                         string query = "UPDATE CARTI SET LIMBA = :limba WHERE ID_CARTE = :target";
                         using (OracleCommand cmd = new OracleCommand(query, connection))
                         {
-                            cmd.Parameters.Add("titlu", OracleDbType.Varchar2).Value = Convert.ToString(new_val_txt.Text);
+                            cmd.Parameters.Add("limba", OracleDbType.Varchar2).Value = Convert.ToString(new_val_txt.Text);
                             cmd.Parameters.Add("target", OracleDbType.Int32).Value = Convert.ToInt32(target_txt.Text);
 
-                            int rows = cmd.ExecuteNonQuery();
-                            queryOutput_lbl.Text = $"{rows} randuri au fost afectate";
-
+                            cmd.ExecuteNonQuery();
+                            queryOutput_lbl.Text = "Modificat cu succes!";
                         }
                     }
 
+                    //works
                     if (autor_ck.Checked)
                     {
                         checkIntegrity();
@@ -103,12 +104,12 @@ namespace GestiuneCarti.Forms
                             cmd.Parameters.Add("autor", OracleDbType.Varchar2).Value = Convert.ToString(new_val_txt.Text);
                             cmd.Parameters.Add("target", OracleDbType.Int32).Value = Convert.ToInt32(target_txt.Text);
 
-                            int rows = cmd.ExecuteNonQuery();
-                            queryOutput_lbl.Text = $"{rows} randuri au fost afectate";
-
+                            cmd.ExecuteNonQuery();
+                            queryOutput_lbl.Text = "Modificat cu succes!";
                         }
                     }
 
+                    //works
                     if (loc_ck.Checked)
                     {
                         checkIntegrity();
@@ -119,12 +120,12 @@ namespace GestiuneCarti.Forms
                             cmd.Parameters.Add("loc", OracleDbType.Varchar2).Value = Convert.ToString(new_val_txt.Text);
                             cmd.Parameters.Add("target", OracleDbType.Int32).Value = Convert.ToInt32(target_txt.Text);
 
-                            int rows = cmd.ExecuteNonQuery();
-                            queryOutput_lbl.Text = $"{rows} randuri au fost afectate";
-
+                            cmd.ExecuteNonQuery();
+                            queryOutput_lbl.Text = "Modificat cu succes!";
                         }
                     }
 
+                    //works
                     if (an_ck.Checked)
                     {
                         checkIntegrity();
@@ -132,15 +133,14 @@ namespace GestiuneCarti.Forms
                         string query = "UPDATE CARTI SET ANUL_PUBLICARII = :an WHERE ID_CARTE = :target";
                         using (OracleCommand cmd = new OracleCommand(query, connection))
                         {
-                            cmd.Parameters.Add("an", OracleDbType.Varchar2).Value = Convert.ToString(new_val_txt.Text);
+                            cmd.Parameters.Add("an", OracleDbType.Int32).Value = Convert.ToInt32(new_val_txt.Text);
                             cmd.Parameters.Add("target", OracleDbType.Int32).Value = Convert.ToInt32(target_txt.Text);
 
-                            int rows = cmd.ExecuteNonQuery();
-                            queryOutput_lbl.Text = $"{rows} randuri au fost afectate";
-
+                            cmd.ExecuteNonQuery();
+                            queryOutput_lbl.Text = "Modificat cu succes!";
                         }
                     }
-
+                    //works
                     if (idCZU_ck.Checked)
                     {
                         checkIntegrity();
@@ -148,15 +148,14 @@ namespace GestiuneCarti.Forms
                         string query = "UPDATE CARTI SET ID_CZU = :id_czu WHERE ID_CARTE = :target";
                         using (OracleCommand cmd = new OracleCommand(query, connection))
                         {
-                            cmd.Parameters.Add("id_czu", OracleDbType.Varchar2).Value = Convert.ToString(new_val_txt.Text);
+                            cmd.Parameters.Add("id_czu", OracleDbType.Int32).Value = Convert.ToInt32(new_val_txt.Text);
                             cmd.Parameters.Add("target", OracleDbType.Int32).Value = Convert.ToInt32(target_txt.Text);
 
-                            int rows = cmd.ExecuteNonQuery();
-                            queryOutput_lbl.Text = $"{rows} randuri au fost afectate";
-
+                            cmd.ExecuteNonQuery();
+                            queryOutput_lbl.Text = "Modificat cu succes!";
                         }
                     }
-
+                    //works
                     if (pret_ck.Checked)
                     {
                         checkIntegrity();
@@ -164,11 +163,11 @@ namespace GestiuneCarti.Forms
                         string query = "UPDATE CARTI SET PRET = :pret WHERE ID_CARTE = :target";
                         using (OracleCommand cmd = new OracleCommand(query, connection))
                         {
-                            cmd.Parameters.Add("pret", OracleDbType.BinaryFloat).Value = Convert.ToSingle(new_val_txt.Text);
+                            cmd.Parameters.Add("pret", OracleDbType.Decimal).Value = Convert.ToDecimal(new_val_txt.Text.Replace(".", ","));
                             cmd.Parameters.Add("target", OracleDbType.Int32).Value = Convert.ToInt32(target_txt.Text);
 
-                            int rows = cmd.ExecuteNonQuery();
-                            queryOutput_lbl.Text = $"{rows} randuri au fost afectate";
+                            cmd.ExecuteNonQuery();
+                            queryOutput_lbl.Text = "Modificat cu succes!";
                         }
                     }
                     //works
@@ -182,9 +181,8 @@ namespace GestiuneCarti.Forms
                             cmd.Parameters.Add("nr_exemp", OracleDbType.Int32).Value = Convert.ToInt32(new_val_txt.Text);
                             cmd.Parameters.Add("target", OracleDbType.Int32).Value = Convert.ToInt32(target_txt.Text);
 
-                            int rows = cmd.ExecuteNonQuery();
-                            queryOutput_lbl.Text = $"{rows} randuri au fost afectate";
-
+                            cmd.ExecuteNonQuery();
+                            queryOutput_lbl.Text = "Modificat cu succes!";
                         }
                     }
 

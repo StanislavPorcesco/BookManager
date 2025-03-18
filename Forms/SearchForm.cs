@@ -29,6 +29,23 @@ namespace GestiuneCarti.Forms
         private void SearchForm_Load(object sender, EventArgs e)
         {
             error_timer.Tick += Timer_Tick;
+            if (!autor_ck.Checked && !czu_ck.Checked && connection.State == ConnectionState.Open)
+            {
+                string query1 = "SELECT * FROM CARTI ORDER BY 1";
+                using (OracleDataAdapter adapter = new OracleDataAdapter(query1, connection))
+                {
+                    dataGridView1.Width = 1100;
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    queryOutput_lbl.Text = "Tabel încărcat cu succes!";
+                    error_timer.Start();
+                }
+            }
+            else
+            {
+                throw new CustomException("Conexiune eșuată!");
+            }
         }
         private void load_btn_Click(object sender, EventArgs e)
         {
@@ -44,6 +61,7 @@ namespace GestiuneCarti.Forms
                 {
                     if (czu_ck.Checked)
                     {
+                        if (criteria_txt.Text == string.Empty) throw new CustomException("Concretizați care după care CZU dorți să căutați!");                
                         int id_czu = Convert.ToInt32(criteria_txt.Text);
                         string query2 = $"SELECT ID_CARTE, ID_CZU FROM CARTI WHERE ID_CZU = {id_czu} ORDER BY 1";
                         using (OracleDataAdapter adapter = new OracleDataAdapter(query2, connection))
@@ -58,8 +76,9 @@ namespace GestiuneCarti.Forms
                         }
                     }
 
-                    if (autor_ck.Checked)
+                    if (autor_ck.Checked && criteria_txt.Text != string.Empty)
                     {
+                        if (criteria_txt.Text == string.Empty) throw new CustomException("Concretizați care după care Autor dorți să căutați!");
                         string autor = Convert.ToString(criteria_txt.Text);
                         string query3 = $"SELECT ID_CARTE, AUTOR FROM CARTI WHERE AUTOR = '{autor}' ORDER BY 1";
                         using (OracleDataAdapter adapter = new OracleDataAdapter(query3, connection))
@@ -71,7 +90,7 @@ namespace GestiuneCarti.Forms
                             queryOutput_lbl.Text = "Tabel încărcat cu succes!";
                             error_timer.Start();
                         }
-                    }
+                    } 
 
                     if (!autor_ck.Checked && !czu_ck.Checked)
                     {
