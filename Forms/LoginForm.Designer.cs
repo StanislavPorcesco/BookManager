@@ -31,36 +31,41 @@
             connect_btn = new Button();
             exit_btn = new Button();
             welecome_lbl = new Label();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // username_txt
             // 
+            username_txt.Anchor = AnchorStyles.None;
             username_txt.BackColor = Color.Gray;
             username_txt.BorderStyle = BorderStyle.None;
             username_txt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             username_txt.ForeColor = Color.White;
-            username_txt.Location = new Point(108, 98);
+            username_txt.Location = new Point(131, 98);
             username_txt.Name = "username_txt";
             username_txt.Size = new Size(336, 27);
             username_txt.TabIndex = 0;
             // 
             // password_txt
             // 
+            password_txt.Anchor = AnchorStyles.None;
             password_txt.BackColor = Color.Gray;
             password_txt.BorderStyle = BorderStyle.None;
             password_txt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             password_txt.ForeColor = Color.White;
-            password_txt.Location = new Point(108, 145);
+            password_txt.Location = new Point(131, 145);
             password_txt.Name = "password_txt";
+            password_txt.PasswordChar = '*';
             password_txt.Size = new Size(336, 27);
             password_txt.TabIndex = 0;
             // 
             // username_lbl
             // 
+            username_lbl.Anchor = AnchorStyles.None;
             username_lbl.AutoSize = true;
             username_lbl.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            username_lbl.ForeColor = Color.FromArgb(224, 224, 224);
-            username_lbl.Location = new Point(12, 98);
+            username_lbl.ForeColor = Color.White;
+            username_lbl.Location = new Point(35, 98);
             username_lbl.Name = "username_lbl";
             username_lbl.Size = new Size(80, 20);
             username_lbl.TabIndex = 1;
@@ -68,10 +73,11 @@
             // 
             // password_lbl
             // 
+            password_lbl.Anchor = AnchorStyles.None;
             password_lbl.AutoSize = true;
             password_lbl.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             password_lbl.ForeColor = Color.White;
-            password_lbl.Location = new Point(12, 144);
+            password_lbl.Location = new Point(35, 144);
             password_lbl.Name = "password_lbl";
             password_lbl.Size = new Size(76, 20);
             password_lbl.TabIndex = 2;
@@ -79,11 +85,12 @@
             // 
             // connect_btn
             // 
+            connect_btn.Anchor = AnchorStyles.None;
             connect_btn.BackColor = Color.Gray;
             connect_btn.FlatStyle = FlatStyle.Popup;
             connect_btn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             connect_btn.ForeColor = Color.White;
-            connect_btn.Location = new Point(291, 195);
+            connect_btn.Location = new Point(314, 208);
             connect_btn.Name = "connect_btn";
             connect_btn.Size = new Size(153, 45);
             connect_btn.TabIndex = 3;
@@ -93,11 +100,12 @@
             // 
             // exit_btn
             // 
+            exit_btn.Anchor = AnchorStyles.None;
             exit_btn.BackColor = Color.Gray;
             exit_btn.FlatStyle = FlatStyle.Popup;
             exit_btn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             exit_btn.ForeColor = Color.White;
-            exit_btn.Location = new Point(108, 195);
+            exit_btn.Location = new Point(131, 208);
             exit_btn.Name = "exit_btn";
             exit_btn.Size = new Size(149, 45);
             exit_btn.TabIndex = 3;
@@ -107,15 +115,29 @@
             // 
             // welecome_lbl
             // 
+            welecome_lbl.Anchor = AnchorStyles.None;
             welecome_lbl.AutoSize = true;
             welecome_lbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             welecome_lbl.ForeColor = Color.White;
-            welecome_lbl.Location = new Point(139, 38);
+            welecome_lbl.Location = new Point(162, 38);
             welecome_lbl.Name = "welecome_lbl";
             welecome_lbl.Size = new Size(261, 31);
             welecome_lbl.TabIndex = 4;
             welecome_lbl.Text = "Conectare bază de date";
             welecome_lbl.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkBox1.ForeColor = Color.White;
+            checkBox1.Location = new Point(131, 178);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(118, 24);
+            checkBox1.TabIndex = 5;
+            checkBox1.Text = "Arată parola";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // LoginForm
             // 
@@ -123,6 +145,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
             ClientSize = new Size(552, 287);
+            Controls.Add(checkBox1);
             Controls.Add(welecome_lbl);
             Controls.Add(exit_btn);
             Controls.Add(connect_btn);
@@ -149,5 +172,6 @@
         private Button connect_btn;
         private Button exit_btn;
         private Label welecome_lbl;
+        private CheckBox checkBox1;
     }
 }

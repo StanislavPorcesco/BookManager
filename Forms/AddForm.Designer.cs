@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             id_carte_txt = new TextBox();
             datelecartii_lbl = new Label();
             titlu_txt = new TextBox();
@@ -49,6 +50,9 @@
             nr_exemp_lbl = new Label();
             limba_lbl = new Label();
             queryOutput_lbl = new Label();
+            error_timer = new System.Windows.Forms.Timer(components);
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // id_carte_txt
@@ -308,12 +312,26 @@
             // 
             queryOutput_lbl.AutoSize = true;
             queryOutput_lbl.Dock = DockStyle.Bottom;
-            queryOutput_lbl.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            queryOutput_lbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             queryOutput_lbl.ForeColor = Color.White;
-            queryOutput_lbl.Location = new Point(0, 543);
+            queryOutput_lbl.Location = new Point(0, 4);
             queryOutput_lbl.Name = "queryOutput_lbl";
-            queryOutput_lbl.Size = new Size(0, 25);
+            queryOutput_lbl.Size = new Size(0, 31);
             queryOutput_lbl.TabIndex = 3;
+            // 
+            // error_timer
+            // 
+            error_timer.Interval = 5000;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(54, 54, 54);
+            panel1.Controls.Add(queryOutput_lbl);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 533);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(982, 35);
+            panel1.TabIndex = 4;
             // 
             // AddForm
             // 
@@ -321,7 +339,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
             ClientSize = new Size(982, 568);
-            Controls.Add(queryOutput_lbl);
+            Controls.Add(panel1);
             Controls.Add(add_book_btn);
             Controls.Add(limba_lbl);
             Controls.Add(nr_exemp_lbl);
@@ -344,6 +362,9 @@
             Controls.Add(id_carte_txt);
             Name = "AddForm";
             Text = "AdaugaForm";
+            Load += AddForm_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -371,5 +392,7 @@
         private Label nr_exemp_lbl;
         private Label limba_lbl;
         private Label queryOutput_lbl;
+        private System.Windows.Forms.Timer error_timer;
+        private Panel panel1;
     }
 }

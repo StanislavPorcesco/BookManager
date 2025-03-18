@@ -24,11 +24,21 @@ namespace GestiuneCarti
         public MenuForm(OracleConnection _connection)
         {
             InitializeComponent();
-            connection = _connection;
+
+            if (_connection == null)
+            {
+                MessageBox.Show("Eroare: Conexiunea la baza de date a eșuat!", "Eroare", MessageBoxButtons.OK);
+                return;
+            }
+            else connection = _connection;
+
 
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 75);
             menu_pnl.Controls.Add(leftBorderBtn);
+
+            OpenChildForm(new InfoForm());
+
         }
         //Structuri
         private struct RGBcolor
@@ -77,11 +87,12 @@ namespace GestiuneCarti
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
                 leftBorderBtn.Location = new Point(-10, currentBtn.Location.Y);
             }
+
         }
 
         private void OpenChildForm(Form childForm)
         {
-            if(currentChildForm != null)
+            if (currentChildForm != null)
             {
                 //open only one form
                 currentChildForm.Close();
@@ -90,7 +101,7 @@ namespace GestiuneCarti
             currentChildForm = childForm;
             childForm.TopLevel = false;
             childForm.Size = desktop_pnl.Size;
-            childForm.FormBorderStyle= FormBorderStyle.None;
+            childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
             desktop_pnl.Controls.Add(childForm);
             desktop_pnl.Tag = childForm;
@@ -116,8 +127,13 @@ namespace GestiuneCarti
         }
         private void maximize_btn_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Normal) WindowState = FormWindowState.Maximized;
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+
             else WindowState = FormWindowState.Normal;
+
         }
 
         private void add_btn_Click(object sender, EventArgs e)
@@ -144,21 +160,25 @@ namespace GestiuneCarti
             OpenChildForm(new SearchForm(connection));
         }
 
-        private void restart_btn_Click(object sender, EventArgs e)
+        private void restart_btn_Click(object? sender, EventArgs e)
         {
             Reset();
         }
 
         private void Reset()
         {
-            DisableButton();
-            leftBorderBtn.Visible = false;
-            iconCurentChildForm.IconChar = IconChar.Home;
-            iconCurentChildForm.IconColor = RGBcolor.color1;
+            if (currentBtn != null)
+            {
+                OpenChildForm(new InfoForm());
+                DisableButton();
+                leftBorderBtn.Visible = false;
 
-            labelCurentChildForm.Text = "Acasă";
-            iconCurentChildForm.ForeColor = currentBtn.ForeColor;
+                iconCurentChildForm.IconChar = IconChar.Home;
+                iconCurentChildForm.IconColor = RGBcolor.color1;
 
+                labelCurentChildForm.Text = "Acasă";
+                iconCurentChildForm.ForeColor = currentBtn.ForeColor;
+            }
         }
 
         //Drag form
@@ -170,6 +190,16 @@ namespace GestiuneCarti
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void restart_lbl_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
+        private void restart_lbl2_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 }

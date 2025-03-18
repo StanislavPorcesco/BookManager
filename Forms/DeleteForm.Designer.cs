@@ -136,7 +136,7 @@
             // 
             queryOutput_lbl.AutoSize = true;
             queryOutput_lbl.Dock = DockStyle.Bottom;
-            queryOutput_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            queryOutput_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             queryOutput_lbl.ForeColor = Color.White;
             queryOutput_lbl.Location = new Point(0, 6);
             queryOutput_lbl.Name = "queryOutput_lbl";

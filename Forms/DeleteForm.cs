@@ -26,7 +26,7 @@ namespace GestiuneCarti.Forms
             range_lbl.Hide();
         }
 
-        private void del1_ck_CheckedChanged(object sender, EventArgs e)
+        private void del1_ck_CheckedChanged(object? sender, EventArgs e)
         {
 
             delmore_ck.CheckedChanged -= delmore_ck_CheckedChanged;
@@ -42,7 +42,7 @@ namespace GestiuneCarti.Forms
             id_carte_txt.Show();
         }
 
-        private void delmore_ck_CheckedChanged(object sender, EventArgs e)
+        private void delmore_ck_CheckedChanged(object? sender, EventArgs e)
         {
             del1_ck.CheckedChanged -= del1_ck_CheckedChanged; // Dezactivează evenimentul
             del1_ck.Checked = false;

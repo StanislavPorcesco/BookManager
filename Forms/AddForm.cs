@@ -20,11 +20,15 @@ namespace GestiuneCarti
             connection = _connection;
             InitializeComponent();
         }
-        
-        
 
+        private void Timer_Tick(object? sender, EventArgs e)
+        {
+            queryOutput_lbl.Text = string.Empty;
+            error_timer.Stop();
+        }
         private void add_book_btn_Click(object sender, EventArgs e)
         {
+            queryOutput_lbl.Text = string.Empty;
             string id_carte = id_carte_txt.Text;
             string titlu = titlu_txt.Text;
             string autor = autor_txt.Text;
@@ -34,14 +38,16 @@ namespace GestiuneCarti
             string pret = pret_txt.Text;
             string nr_exemp = nr_exemp_txt.Text;
             string limba = limba_txt.Text;
-            
+
             string addQuery = "INSERT INTO CARTI (ID_CARTE, TITLU, AUTOR, LOCUL_PUBLICARII, ANUL_PUBLICARII, ID_CZU, PRET, NR_EXEMPLARE, LIMBA) " +
                   "VALUES (:id_carte, :titlu, :autor, :loc_pub, :an_pub, :id_czu, :pret, :nr_exemp, :limba)";
-            
-            if(connection.State != ConnectionState.Open)
+
+            if (connection.State != ConnectionState.Open)
             {
                 queryOutput_lbl.Text = "Conexiunea cu baza de date este eșuată";
+                error_timer.Start();
             }
+
 
             try
             {
@@ -58,7 +64,8 @@ namespace GestiuneCarti
                     cmd.Parameters.Add(":limba", OracleDbType.Varchar2).Value = limba_txt.Text;
 
                     int rows = cmd.ExecuteNonQuery();
-                    queryOutput_lbl.Text = "Carte introdusa cu succes";
+                    queryOutput_lbl.Text = "Carte introdusa cu succes!";
+                    error_timer.Start();
                     connection.Commit();
                     id_carte_txt.Text = "";
                     titlu_txt.Text = "";
@@ -68,17 +75,23 @@ namespace GestiuneCarti
                     id_czu_txt.Text = "";
                     pret_txt.Text = "";
                     nr_exemp_txt.Text = "";
-                    limba_txt.Text = "";                    
+                    limba_txt.Text = "";
                 }
-          
+
 
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 queryOutput_lbl.Text = "Eroare: " + ex.Message;
+                error_timer.Start();
             }
-           
+
+        }
+
+        private void AddForm_Load(object sender, EventArgs e)
+        {
+            error_timer.Tick += Timer_Tick;
         }
     }
 }

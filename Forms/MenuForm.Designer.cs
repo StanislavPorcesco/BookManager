@@ -35,6 +35,8 @@
             delete_btn = new FontAwesome.Sharp.IconButton();
             add_btn = new FontAwesome.Sharp.IconButton();
             logo_pnl = new Panel();
+            restart_lbl2 = new Label();
+            restart_lbl = new Label();
             restart_btn = new FontAwesome.Sharp.IconPictureBox();
             titlebar_pnl = new Panel();
             panel1 = new Panel();
@@ -156,12 +158,38 @@
             // 
             // logo_pnl
             // 
+            logo_pnl.Controls.Add(restart_lbl2);
+            logo_pnl.Controls.Add(restart_lbl);
             logo_pnl.Controls.Add(restart_btn);
             logo_pnl.Dock = DockStyle.Top;
             logo_pnl.Location = new Point(0, 0);
             logo_pnl.Name = "logo_pnl";
             logo_pnl.Size = new Size(220, 125);
             logo_pnl.TabIndex = 0;
+            // 
+            // restart_lbl2
+            // 
+            restart_lbl2.AutoSize = true;
+            restart_lbl2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            restart_lbl2.ForeColor = Color.White;
+            restart_lbl2.Location = new Point(90, 58);
+            restart_lbl2.Name = "restart_lbl2";
+            restart_lbl2.Size = new Size(65, 31);
+            restart_lbl2.TabIndex = 1;
+            restart_lbl2.Text = "Cărți";
+            restart_lbl2.Click += restart_lbl2_Click;
+            // 
+            // restart_lbl
+            // 
+            restart_lbl.AutoSize = true;
+            restart_lbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            restart_lbl.ForeColor = Color.White;
+            restart_lbl.Location = new Point(90, 27);
+            restart_lbl.Name = "restart_lbl";
+            restart_lbl.Size = new Size(129, 31);
+            restart_lbl.TabIndex = 1;
+            restart_lbl.Text = "Gestionare";
+            restart_lbl.Click += restart_lbl_Click;
             // 
             // restart_btn
             // 
@@ -172,7 +200,7 @@
             restart_btn.IconColor = Color.FromArgb(224, 224, 224);
             restart_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             restart_btn.IconSize = 85;
-            restart_btn.Location = new Point(57, 0);
+            restart_btn.Location = new Point(3, 0);
             restart_btn.Name = "restart_btn";
             restart_btn.Padding = new Padding(0, 20, 0, 20);
             restart_btn.Size = new Size(85, 125);
@@ -192,7 +220,7 @@
             titlebar_pnl.MaximumSize = new Size(0, 35);
             titlebar_pnl.MinimumSize = new Size(0, 35);
             titlebar_pnl.Name = "titlebar_pnl";
-            titlebar_pnl.Size = new Size(876, 35);
+            titlebar_pnl.Size = new Size(985, 35);
             titlebar_pnl.TabIndex = 1;
             titlebar_pnl.MouseDown += titlebar_pnl_MouseDown;
             // 
@@ -245,7 +273,7 @@
             minimize_btn.IconColor = Color.FromArgb(224, 224, 224);
             minimize_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             minimize_btn.IconSize = 30;
-            minimize_btn.Location = new Point(594, 0);
+            minimize_btn.Location = new Point(703, 0);
             minimize_btn.Name = "minimize_btn";
             minimize_btn.Size = new Size(94, 35);
             minimize_btn.TabIndex = 1;
@@ -263,7 +291,7 @@
             maximize_btn.IconColor = Color.FromArgb(224, 224, 224);
             maximize_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             maximize_btn.IconSize = 30;
-            maximize_btn.Location = new Point(688, 0);
+            maximize_btn.Location = new Point(797, 0);
             maximize_btn.Name = "maximize_btn";
             maximize_btn.Size = new Size(94, 35);
             maximize_btn.TabIndex = 2;
@@ -281,7 +309,7 @@
             close_btn.IconColor = Color.FromArgb(224, 224, 224);
             close_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             close_btn.IconSize = 30;
-            close_btn.Location = new Point(782, 0);
+            close_btn.Location = new Point(891, 0);
             close_btn.Name = "close_btn";
             close_btn.Size = new Size(94, 35);
             close_btn.TabIndex = 0;
@@ -294,7 +322,7 @@
             desktop_pnl.Dock = DockStyle.Fill;
             desktop_pnl.Location = new Point(220, 37);
             desktop_pnl.Name = "desktop_pnl";
-            desktop_pnl.Size = new Size(876, 595);
+            desktop_pnl.Size = new Size(985, 595);
             desktop_pnl.TabIndex = 2;
             // 
             // MenuForm
@@ -302,7 +330,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
-            ClientSize = new Size(1096, 632);
+            ClientSize = new Size(1205, 632);
             Controls.Add(desktop_pnl);
             Controls.Add(titlebar_pnl);
             Controls.Add(menu_pnl);
@@ -315,6 +343,7 @@
             Load += MenuForm_Load;
             menu_pnl.ResumeLayout(false);
             logo_pnl.ResumeLayout(false);
+            logo_pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)restart_btn).EndInit();
             titlebar_pnl.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -339,5 +368,7 @@
         private Label labelCurentChildForm;
         private Panel panel1;
         private Panel desktop_pnl;
+        private Label restart_lbl2;
+        private Label restart_lbl;
     }
 }

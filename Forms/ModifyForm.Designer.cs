@@ -39,14 +39,14 @@
             nr_exemp_ck = new CheckBox();
             mainLabel_lbl = new Label();
             label1 = new Label();
-            textBox1 = new TextBox();
+            target_txt = new TextBox();
             modify_btn = new FontAwesome.Sharp.IconButton();
             save_btn = new FontAwesome.Sharp.IconButton();
-            panel1 = new Panel();
+            error_panel = new Panel();
             queryOutput_lbl = new Label();
             label2 = new Label();
             new_val_txt = new TextBox();
-            panel1.SuspendLayout();
+            error_panel.SuspendLayout();
             SuspendLayout();
             // 
             // modifyID_ck
@@ -125,7 +125,7 @@
             an_ck.AutoSize = true;
             an_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             an_ck.ForeColor = Color.White;
-            an_ck.Location = new Point(304, 72);
+            an_ck.Location = new Point(368, 72);
             an_ck.Name = "an_ck";
             an_ck.Size = new Size(150, 27);
             an_ck.TabIndex = 0;
@@ -139,7 +139,7 @@
             idCZU_ck.AutoSize = true;
             idCZU_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             idCZU_ck.ForeColor = Color.White;
-            idCZU_ck.Location = new Point(304, 105);
+            idCZU_ck.Location = new Point(368, 105);
             idCZU_ck.Name = "idCZU_ck";
             idCZU_ck.Size = new Size(88, 27);
             idCZU_ck.TabIndex = 0;
@@ -153,7 +153,7 @@
             pret_ck.AutoSize = true;
             pret_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             pret_ck.ForeColor = Color.White;
-            pret_ck.Location = new Point(304, 138);
+            pret_ck.Location = new Point(368, 138);
             pret_ck.Name = "pret_ck";
             pret_ck.Size = new Size(65, 27);
             pret_ck.TabIndex = 0;
@@ -167,7 +167,7 @@
             nr_exemp_ck.AutoSize = true;
             nr_exemp_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nr_exemp_ck.ForeColor = Color.White;
-            nr_exemp_ck.Location = new Point(304, 171);
+            nr_exemp_ck.Location = new Point(368, 171);
             nr_exemp_ck.Name = "nr_exemp_ck";
             nr_exemp_ck.Size = new Size(145, 27);
             nr_exemp_ck.TabIndex = 0;
@@ -199,16 +199,16 @@
             label1.TabIndex = 1;
             label1.Text = "ID-ul cărții ce urmează modificată:";
             // 
-            // textBox1
+            // target_txt
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.BackColor = Color.FromArgb(54, 54, 54);
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(190, 288);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(411, 27);
-            textBox1.TabIndex = 2;
+            target_txt.Anchor = AnchorStyles.None;
+            target_txt.BackColor = Color.FromArgb(54, 54, 54);
+            target_txt.BorderStyle = BorderStyle.FixedSingle;
+            target_txt.ForeColor = Color.White;
+            target_txt.Location = new Point(190, 288);
+            target_txt.Name = "target_txt";
+            target_txt.Size = new Size(411, 27);
+            target_txt.TabIndex = 2;
             // 
             // modify_btn
             // 
@@ -250,15 +250,15 @@
             save_btn.UseVisualStyleBackColor = false;
             save_btn.Click += save_btn_Click;
             // 
-            // panel1
+            // error_panel
             // 
-            panel1.BackColor = Color.FromArgb(54, 54, 54);
-            panel1.Controls.Add(queryOutput_lbl);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 538);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(800, 35);
-            panel1.TabIndex = 4;
+            error_panel.BackColor = Color.FromArgb(54, 54, 54);
+            error_panel.Controls.Add(queryOutput_lbl);
+            error_panel.Dock = DockStyle.Bottom;
+            error_panel.Location = new Point(0, 538);
+            error_panel.Name = "error_panel";
+            error_panel.Size = new Size(800, 35);
+            error_panel.TabIndex = 4;
             // 
             // queryOutput_lbl
             // 
@@ -300,12 +300,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
             ClientSize = new Size(800, 573);
-            Controls.Add(panel1);
+            Controls.Add(error_panel);
             Controls.Add(save_btn);
             Controls.Add(modify_btn);
             Controls.Add(new_val_txt);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(target_txt);
             Controls.Add(label1);
             Controls.Add(mainLabel_lbl);
             Controls.Add(loc_ck);
@@ -319,8 +319,8 @@
             Controls.Add(modifyID_ck);
             Name = "ModifyForm";
             Text = "ModifyForm";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            error_panel.ResumeLayout(false);
+            error_panel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -338,10 +338,10 @@
         private CheckBox nr_exemp_ck;
         private Label mainLabel_lbl;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox target_txt;
         private FontAwesome.Sharp.IconButton modify_btn;
         private FontAwesome.Sharp.IconButton save_btn;
-        private Panel panel1;
+        private Panel error_panel;
         private Label queryOutput_lbl;
         private Label label2;
         private TextBox new_val_txt;
