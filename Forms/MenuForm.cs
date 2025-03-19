@@ -37,7 +37,7 @@ namespace GestiuneCarti
             leftBorderBtn.Size = new Size(7, 75);
             menu_pnl.Controls.Add(leftBorderBtn);
 
-            OpenChildForm(new InfoForm());
+            OpenChildForm(new InfoForm(connection));
 
         }
         //Structuri
@@ -169,7 +169,7 @@ namespace GestiuneCarti
         {
             if (currentBtn != null)
             {
-                OpenChildForm(new InfoForm());
+                OpenChildForm(new InfoForm(connection));
                 DisableButton();
                 leftBorderBtn.Visible = false;
 
