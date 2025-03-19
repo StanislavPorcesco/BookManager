@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GestiuneCarti.Forms;
 using Oracle.ManagedDataAccess;
 using Oracle.ManagedDataAccess.Client;
 
@@ -48,9 +49,18 @@ namespace GestiuneCarti
                 error_timer.Start();
             }
 
-
             try
             {
+                if (id_carte_txt.Text == string.Empty) throw new CustomException("Concretizați ID-ul cărții!");
+                if (titlu_txt.Text == string.Empty) throw new CustomException("Concretizați titlul cărții!");
+                if (autor_txt.Text == string.Empty) throw new CustomException("Concretizați autorul cărții!");
+                if (loc_pub_txt.Text == string.Empty) throw new CustomException("Concretizați locul publicării cărții!");
+                if (an_pub_txt.Text == string.Empty) throw new CustomException("Concretizați anul publicării cărții!");
+                if (id_czu_txt.Text == string.Empty) throw new CustomException("Concretizați ID-ul CZU al cărții!");
+                if (pret_txt.Text == string.Empty) throw new CustomException("Concretizați prețul cărții!");
+                if (nr_exemp_txt.Text == string.Empty) throw new CustomException("Concretizați nr. exemplare al cărții!");
+                if (limba_txt.Text == string.Empty) throw new CustomException("Concretizați limba cărții!");
+
                 using (OracleCommand cmd = new OracleCommand(addQuery, connection))
                 {
                     cmd.Parameters.Add(":id_carte", OracleDbType.Int32).Value = Convert.ToInt32(id_carte_txt.Text);
@@ -83,7 +93,8 @@ namespace GestiuneCarti
             }
             catch (Exception ex)
             {
-                queryOutput_lbl.Text = "Eroare: " + ex.Message;
+                MessageBox.Show($"Eroare: {ex.Message}", "Eroare", MessageBoxButtons.OK);
+                queryOutput_lbl.Text = "Eroare!";
                 error_timer.Start();
             }
 

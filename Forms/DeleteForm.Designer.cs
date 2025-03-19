@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             id_carte_txt = new TextBox();
             delete_btn = new FontAwesome.Sharp.IconButton();
             single_lbl = new Label();
@@ -41,6 +42,7 @@
             range_lbl = new Label();
             save_btn = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
+            error_timer = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -112,7 +114,7 @@
             metoda_lbl.AutoSize = true;
             metoda_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             metoda_lbl.ForeColor = Color.White;
-            metoda_lbl.Location = new Point(269, 44);
+            metoda_lbl.Location = new Point(261, 55);
             metoda_lbl.Name = "metoda_lbl";
             metoda_lbl.Size = new Size(242, 29);
             metoda_lbl.TabIndex = 3;
@@ -136,11 +138,11 @@
             // 
             queryOutput_lbl.AutoSize = true;
             queryOutput_lbl.Dock = DockStyle.Bottom;
-            queryOutput_lbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            queryOutput_lbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             queryOutput_lbl.ForeColor = Color.White;
-            queryOutput_lbl.Location = new Point(0, 6);
+            queryOutput_lbl.Location = new Point(0, 4);
             queryOutput_lbl.Name = "queryOutput_lbl";
-            queryOutput_lbl.Size = new Size(0, 29);
+            queryOutput_lbl.Size = new Size(0, 31);
             queryOutput_lbl.TabIndex = 3;
             // 
             // multi_lbl
@@ -155,6 +157,7 @@
             multi_lbl.TabIndex = 3;
             multi_lbl.Text = "Introdu intervalul ID-urilor";
             multi_lbl.TextAlign = ContentAlignment.MiddleCenter;
+            multi_lbl.Visible = false;
             // 
             // range1_txt
             // 
@@ -167,6 +170,7 @@
             range1_txt.Name = "range1_txt";
             range1_txt.Size = new Size(307, 28);
             range1_txt.TabIndex = 0;
+            range1_txt.Visible = false;
             // 
             // range2_txt
             // 
@@ -179,6 +183,7 @@
             range2_txt.Name = "range2_txt";
             range2_txt.Size = new Size(307, 28);
             range2_txt.TabIndex = 0;
+            range2_txt.Visible = false;
             // 
             // range_lbl
             // 
@@ -192,6 +197,7 @@
             range_lbl.TabIndex = 3;
             range_lbl.Text = "(de ex. 100 și 200 )";
             range_lbl.TextAlign = ContentAlignment.MiddleCenter;
+            range_lbl.Visible = false;
             // 
             // save_btn
             // 
@@ -224,6 +230,10 @@
             panel1.Size = new Size(800, 35);
             panel1.TabIndex = 5;
             // 
+            // error_timer
+            // 
+            error_timer.Interval = 5000;
+            // 
             // DeleteForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -244,6 +254,7 @@
             Controls.Add(id_carte_txt);
             Name = "DeleteForm";
             Text = "DeleteForm";
+            Load += DeleteForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -265,5 +276,6 @@
         private Label range_lbl;
         private FontAwesome.Sharp.IconButton save_btn;
         private Panel panel1;
+        private System.Windows.Forms.Timer error_timer;
     }
 }

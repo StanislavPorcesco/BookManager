@@ -20,12 +20,12 @@ namespace GestiuneCarti.Forms
         {
             connection = _connection;
             InitializeComponent();
-            multi_lbl.Hide();
-            range1_txt.Hide();
-            range2_txt.Hide();
-            range_lbl.Hide();
         }
-
+        private void Timer_Tick(object? sender, EventArgs e)
+        {
+            queryOutput_lbl.Text = string.Empty;
+            error_timer.Stop();
+        }
         private void del1_ck_CheckedChanged(object? sender, EventArgs e)
         {
 
@@ -65,27 +65,27 @@ namespace GestiuneCarti.Forms
             if (connection.State != ConnectionState.Open)
             {
                 queryOutput_lbl.Text = "Conexiune eșuată!";
-                return;
-            } else
-            {
-                queryOutput_lbl.Text = "Conexiune stabilă. Nici o comandă executată!";
-            }    
+                error_timer.Start();
+            }  
 
             try
             {
                 if (del1_ck.Checked)
                 {
+                    if (id_carte_txt.Text == string.Empty) throw new CustomException("Concretizați ID-ul cărții");
                     string query = "DELETE FROM CARTI WHERE ID_CARTE = :id_carte";
                     using (OracleCommand cmd = new OracleCommand(query, connection))
                     {
                         cmd.Parameters.Add(":id_carte", OracleDbType.Int32).Value = Convert.ToInt32(id_carte_txt.Text);
                         cmd.ExecuteNonQuery();
-                        queryOutput_lbl.Text = $"Cartea ID{id_carte} a fost ștearsă cu succes!";
+                        queryOutput_lbl.Text = $"Cartea ID-{id_carte} a fost ștearsă cu succes!";
+                        error_timer.Start();
                     }
                 }
 
                 if (delmore_ck.Checked) // Decomentează dacă este necesar
                 {
+                    if (range1_txt.Text == string.Empty && range2_txt.Text == string.Empty) throw new CustomException("Concretizați intervalele ID-urilor");
                     string query = "DELETE FROM CARTI WHERE ID_CARTE BETWEEN :id_range1 AND :id_range2";
                     using (OracleCommand cmd = new OracleCommand(query, connection))
                     {
@@ -93,13 +93,14 @@ namespace GestiuneCarti.Forms
                         cmd.Parameters.Add(":id_range2", OracleDbType.Int32).Value = Convert.ToInt32(range2_txt.Text);
 
                         int rows = cmd.ExecuteNonQuery();
-                        queryOutput_lbl.Text = $"Au fost șterse {rows} rânduri!";
+                        queryOutput_lbl.Text = $"Au fost șterse {rows} cărți!";
+                        error_timer.Start();
                     }
                 }
             }
             catch (Exception ex)
             {
-                queryOutput_lbl.Text = ex.Message;
+                MessageBox.Show($"Eroare: {ex.Message}", "Eroare", MessageBoxButtons.OK);
             }
         }
 
@@ -109,11 +110,17 @@ namespace GestiuneCarti.Forms
             {
                 connection.Commit();
                 queryOutput_lbl.Text = "Modificări salvate!";
+                error_timer.Start();
             } else
             {
                 queryOutput_lbl.Text = "Conxiune eșuată!";
+                error_timer.Start();
             }
         }
 
+        private void DeleteForm_Load(object sender, EventArgs e)
+        {
+            error_timer.Tick += Timer_Tick;
+        }
     }
 }
