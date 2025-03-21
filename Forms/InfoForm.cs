@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace GestiuneCarti.Forms
@@ -18,6 +19,21 @@ namespace GestiuneCarti.Forms
         {
             InitializeComponent();
             connection = _connection;
+            SetupScrollBar();
+        }
+
+        private void SetupScrollBar()
+        {
+            vScrollBarBooks.Minimum = 0;
+            vScrollBarBooks.Maximum = panelBooks.Height;
+            vScrollBarBooks.SmallChange = 20;
+            vScrollBarBooks.LargeChange = 500;
+
+            // Eveniment pentru scroll manual
+            vScrollBarBooks.Scroll += (sender, e) =>
+            {
+                panelBooks.AutoScrollPosition = new Point(0, vScrollBarBooks.Value);
+            };
         }
 
         private void InfoForm_Load(object sender, EventArgs e)
@@ -25,7 +41,8 @@ namespace GestiuneCarti.Forms
             if (connection.State != ConnectionState.Open)
             {
                 throw new CustomException("Conexiune eșuată!");
-            } else
+            }
+            else
             {
                 try
                 {
@@ -43,11 +60,13 @@ namespace GestiuneCarti.Forms
                         nr_carti_lbl.Text = $"Număr de cărți: {nr_carti} buc.";
                     }
 
-                } catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show($"Eroare: {ex.Message}", "Eroare", MessageBoxButtons.OK);
                 }
             }
         }
+
     }
 }
