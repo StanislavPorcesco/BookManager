@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 
 namespace GestiuneCarti.Forms
-{   
+{
     public partial class ModifyForm : Form
     {
         private OracleConnection connection;
@@ -33,41 +33,13 @@ namespace GestiuneCarti.Forms
             {
                 try
                 {
-                    if (modifyID_ck.Checked)
-                    {
-                        checkIntegrity();
-
-                        string query = "UPDATE CARTI SET ID_CARTE = :id_carte WHERE ID_CARTE = :target";
-                        using(OracleCommand cmd = new OracleCommand(query, connection)) {
-                            string checkQuery = "SELECT COUNT(*) FROM CARTI WHERE ID_CARTE = :target";
-                            //Verificam existenta ID-ului target
-                            using (OracleCommand checkCmd = new OracleCommand(checkQuery, connection))
-                            {
-                                checkCmd.Parameters.Add("target", OracleDbType.Int32).Value = Convert.ToInt32(target_txt.Text);
-                                int count = Convert.ToInt32(checkCmd.ExecuteScalar());
-
-                                if (count == 0)
-                                {
-                                    MessageBox.Show("ID-ul introdus nu există în baza de date!", "Eroare", MessageBoxButtons.OK);
-                                    return;
-                                }
-                            }
-
-                            cmd.Parameters.Add("target", OracleDbType.Int32).Value = Convert.ToInt32(target_txt.Text);
-                            cmd.Parameters.Add("id_carte", OracleDbType.Int32).Value = Convert.ToInt32(new_val_txt.Text);
-
-                            cmd.ExecuteNonQuery();
-                            queryOutput_lbl.Text = "Modificat cu succes!";
-                        }
-                    }
-
                     //wokrs
                     if (title_ck.Checked)
                     {
                         checkIntegrity();
 
                         string query = "UPDATE CARTI SET TITLU = :titlu WHERE ID_CARTE = :target";
-                        using(OracleCommand cmd = new OracleCommand(query, connection))
+                        using (OracleCommand cmd = new OracleCommand(query, connection))
                         {
                             cmd.Parameters.Add("titlu", OracleDbType.Varchar2).Value = Convert.ToString(new_val_txt.Text);
                             cmd.Parameters.Add("target", OracleDbType.Int32).Value = Convert.ToInt32(target_txt.Text);
@@ -186,18 +158,19 @@ namespace GestiuneCarti.Forms
                         }
                     }
 
-                    if (!modifyID_ck.Checked && !title_ck.Checked && !autor_ck.Checked && !limba_ck.Checked && !loc_ck.Checked && !an_ck.Checked && !idCZU_ck.Checked && !pret_ck.Checked && !nr_exemp_ck.Checked)
+                    if (!title_ck.Checked && !autor_ck.Checked && !limba_ck.Checked && !loc_ck.Checked && !an_ck.Checked && !idCZU_ck.Checked && !pret_ck.Checked && !nr_exemp_ck.Checked)
                     {
                         throw new CustomException("Selectati o casuță!");
                     }
 
-                } catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show($"Eroare: {ex.Message}", "Eroare", MessageBoxButtons.OK);
                 }
             }
 
-       
+
 
 
         }
@@ -227,49 +200,8 @@ namespace GestiuneCarti.Forms
                 queryOutput_lbl.Text = "Conxiune eșuată!";
             }
         }
-        private void modifyID_ck_CheckedChanged(object? sender, EventArgs e)
-        {
-
-            title_ck.CheckedChanged -= title_ck_CheckedChanged;
-            title_ck.Checked = false;
-            title_ck.CheckedChanged += title_ck_CheckedChanged;
-
-            limba_ck.CheckedChanged -= limba_ck_CheckedChanged;
-            limba_ck.Checked = false;
-            limba_ck.CheckedChanged += limba_ck_CheckedChanged;
-
-            autor_ck.CheckedChanged -= autor_ck_CheckedChanged;
-            autor_ck.Checked = false;
-            autor_ck.CheckedChanged += autor_ck_CheckedChanged;
-
-            loc_ck.CheckedChanged -= loc_ck_CheckedChanged;
-            loc_ck.Checked = false;
-            loc_ck.CheckedChanged += loc_ck_CheckedChanged;
-
-            an_ck.CheckedChanged -= an_ck_CheckedChanged;
-            an_ck.Checked = false;
-            an_ck.CheckedChanged += an_ck_CheckedChanged;
-
-            idCZU_ck.CheckedChanged -= idCZU_ck_CheckedChanged;
-            idCZU_ck.Checked = false;
-            idCZU_ck.CheckedChanged += idCZU_ck_CheckedChanged;
-
-            pret_ck.CheckedChanged -= pret_ck_CheckedChanged;
-            pret_ck.Checked = false;
-            pret_ck.CheckedChanged += pret_ck_CheckedChanged;
-
-            nr_exemp_ck.CheckedChanged -= nr_exemp_ck_CheckedChanged;
-            nr_exemp_ck.Checked = false;
-            nr_exemp_ck.CheckedChanged += nr_exemp_ck_CheckedChanged;
-
-        }
-
         private void title_ck_CheckedChanged(object? sender, EventArgs e)
         {
-            modifyID_ck.CheckedChanged -= modifyID_ck_CheckedChanged;
-            modifyID_ck.Checked = false;
-            modifyID_ck.CheckedChanged += modifyID_ck_CheckedChanged;
-
             limba_ck.CheckedChanged -= limba_ck_CheckedChanged;
             limba_ck.Checked = false;
             limba_ck.CheckedChanged += limba_ck_CheckedChanged;
@@ -301,10 +233,6 @@ namespace GestiuneCarti.Forms
 
         private void limba_ck_CheckedChanged(object? sender, EventArgs e)
         {
-            modifyID_ck.CheckedChanged -= modifyID_ck_CheckedChanged;
-            modifyID_ck.Checked = false;
-            modifyID_ck.CheckedChanged += modifyID_ck_CheckedChanged;
-
             title_ck.CheckedChanged -= title_ck_CheckedChanged;
             title_ck.Checked = false;
             title_ck.CheckedChanged += title_ck_CheckedChanged;
@@ -336,9 +264,6 @@ namespace GestiuneCarti.Forms
 
         private void autor_ck_CheckedChanged(object? sender, EventArgs e)
         {
-            modifyID_ck.CheckedChanged -= modifyID_ck_CheckedChanged;
-            modifyID_ck.Checked = false;
-            modifyID_ck.CheckedChanged += modifyID_ck_CheckedChanged;
 
             title_ck.CheckedChanged -= title_ck_CheckedChanged;
             title_ck.Checked = false;
@@ -371,10 +296,6 @@ namespace GestiuneCarti.Forms
 
         private void loc_ck_CheckedChanged(object? sender, EventArgs e)
         {
-            modifyID_ck.CheckedChanged -= modifyID_ck_CheckedChanged;
-            modifyID_ck.Checked = false;
-            modifyID_ck.CheckedChanged += modifyID_ck_CheckedChanged;
-
             title_ck.CheckedChanged -= title_ck_CheckedChanged;
             title_ck.Checked = false;
             title_ck.CheckedChanged += title_ck_CheckedChanged;
@@ -406,9 +327,6 @@ namespace GestiuneCarti.Forms
 
         private void an_ck_CheckedChanged(object? sender, EventArgs e)
         {
-            modifyID_ck.CheckedChanged -= modifyID_ck_CheckedChanged;
-            modifyID_ck.Checked = false;
-            modifyID_ck.CheckedChanged += modifyID_ck_CheckedChanged;
 
             title_ck.CheckedChanged -= title_ck_CheckedChanged;
             title_ck.Checked = false;
@@ -441,9 +359,6 @@ namespace GestiuneCarti.Forms
 
         private void idCZU_ck_CheckedChanged(object? sender, EventArgs e)
         {
-            modifyID_ck.CheckedChanged -= modifyID_ck_CheckedChanged;
-            modifyID_ck.Checked = false;
-            modifyID_ck.CheckedChanged += modifyID_ck_CheckedChanged;
 
             title_ck.CheckedChanged -= title_ck_CheckedChanged;
             title_ck.Checked = false;
@@ -476,10 +391,6 @@ namespace GestiuneCarti.Forms
 
         private void pret_ck_CheckedChanged(object? sender, EventArgs e)
         {
-            modifyID_ck.CheckedChanged -= modifyID_ck_CheckedChanged;
-            modifyID_ck.Checked = false;
-            modifyID_ck.CheckedChanged += modifyID_ck_CheckedChanged;
-
             title_ck.CheckedChanged -= title_ck_CheckedChanged;
             title_ck.Checked = false;
             title_ck.CheckedChanged += title_ck_CheckedChanged;
@@ -511,10 +422,6 @@ namespace GestiuneCarti.Forms
 
         private void nr_exemp_ck_CheckedChanged(object? sender, EventArgs e)
         {
-            modifyID_ck.CheckedChanged -= modifyID_ck_CheckedChanged;
-            modifyID_ck.Checked = false;
-            modifyID_ck.CheckedChanged += modifyID_ck_CheckedChanged;
-
             title_ck.CheckedChanged -= title_ck_CheckedChanged;
             title_ck.Checked = false;
             title_ck.CheckedChanged += title_ck_CheckedChanged;
@@ -542,6 +449,11 @@ namespace GestiuneCarti.Forms
             pret_ck.CheckedChanged -= pret_ck_CheckedChanged;
             pret_ck.Checked = false;
             pret_ck.CheckedChanged += pret_ck_CheckedChanged;
+        }
+
+        private void mainLabel_lbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

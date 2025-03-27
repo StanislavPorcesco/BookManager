@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            modifyID_ck = new CheckBox();
             title_ck = new CheckBox();
             limba_ck = new CheckBox();
             autor_ck = new CheckBox();
@@ -49,27 +48,13 @@
             error_panel.SuspendLayout();
             SuspendLayout();
             // 
-            // modifyID_ck
-            // 
-            modifyID_ck.Anchor = AnchorStyles.None;
-            modifyID_ck.AutoSize = true;
-            modifyID_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            modifyID_ck.ForeColor = Color.White;
-            modifyID_ck.Location = new Point(190, 72);
-            modifyID_ck.Name = "modifyID_ck";
-            modifyID_ck.Size = new Size(98, 27);
-            modifyID_ck.TabIndex = 0;
-            modifyID_ck.Text = "ID Carte";
-            modifyID_ck.UseVisualStyleBackColor = true;
-            modifyID_ck.CheckedChanged += modifyID_ck_CheckedChanged;
-            // 
             // title_ck
             // 
             title_ck.Anchor = AnchorStyles.None;
             title_ck.AutoSize = true;
             title_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title_ck.ForeColor = Color.White;
-            title_ck.Location = new Point(190, 105);
+            title_ck.Location = new Point(215, 103);
             title_ck.Name = "title_ck";
             title_ck.Size = new Size(69, 27);
             title_ck.TabIndex = 0;
@@ -83,7 +68,7 @@
             limba_ck.AutoSize = true;
             limba_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             limba_ck.ForeColor = Color.White;
-            limba_ck.Location = new Point(190, 138);
+            limba_ck.Location = new Point(215, 136);
             limba_ck.Name = "limba_ck";
             limba_ck.Size = new Size(82, 27);
             limba_ck.TabIndex = 0;
@@ -97,7 +82,7 @@
             autor_ck.AutoSize = true;
             autor_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             autor_ck.ForeColor = Color.White;
-            autor_ck.Location = new Point(190, 171);
+            autor_ck.Location = new Point(215, 169);
             autor_ck.Name = "autor_ck";
             autor_ck.Size = new Size(78, 27);
             autor_ck.TabIndex = 0;
@@ -111,7 +96,7 @@
             loc_ck.AutoSize = true;
             loc_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loc_ck.ForeColor = Color.White;
-            loc_ck.Location = new Point(190, 204);
+            loc_ck.Location = new Point(215, 202);
             loc_ck.Name = "loc_ck";
             loc_ck.Size = new Size(155, 27);
             loc_ck.TabIndex = 0;
@@ -125,7 +110,7 @@
             an_ck.AutoSize = true;
             an_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             an_ck.ForeColor = Color.White;
-            an_ck.Location = new Point(368, 72);
+            an_ck.Location = new Point(393, 103);
             an_ck.Name = "an_ck";
             an_ck.Size = new Size(150, 27);
             an_ck.TabIndex = 0;
@@ -139,7 +124,7 @@
             idCZU_ck.AutoSize = true;
             idCZU_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             idCZU_ck.ForeColor = Color.White;
-            idCZU_ck.Location = new Point(368, 105);
+            idCZU_ck.Location = new Point(393, 136);
             idCZU_ck.Name = "idCZU_ck";
             idCZU_ck.Size = new Size(88, 27);
             idCZU_ck.TabIndex = 0;
@@ -153,7 +138,7 @@
             pret_ck.AutoSize = true;
             pret_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             pret_ck.ForeColor = Color.White;
-            pret_ck.Location = new Point(368, 138);
+            pret_ck.Location = new Point(393, 169);
             pret_ck.Name = "pret_ck";
             pret_ck.Size = new Size(65, 27);
             pret_ck.TabIndex = 0;
@@ -167,7 +152,7 @@
             nr_exemp_ck.AutoSize = true;
             nr_exemp_ck.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nr_exemp_ck.ForeColor = Color.White;
-            nr_exemp_ck.Location = new Point(368, 171);
+            nr_exemp_ck.Location = new Point(393, 202);
             nr_exemp_ck.Name = "nr_exemp_ck";
             nr_exemp_ck.Size = new Size(145, 27);
             nr_exemp_ck.TabIndex = 0;
@@ -181,7 +166,7 @@
             mainLabel_lbl.AutoSize = true;
             mainLabel_lbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             mainLabel_lbl.ForeColor = Color.White;
-            mainLabel_lbl.Location = new Point(190, 29);
+            mainLabel_lbl.Location = new Point(215, 60);
             mainLabel_lbl.Name = "mainLabel_lbl";
             mainLabel_lbl.Size = new Size(315, 31);
             mainLabel_lbl.TabIndex = 1;
@@ -316,7 +301,6 @@
             Controls.Add(limba_ck);
             Controls.Add(an_ck);
             Controls.Add(title_ck);
-            Controls.Add(modifyID_ck);
             Name = "ModifyForm";
             Text = "ModifyForm";
             error_panel.ResumeLayout(false);
@@ -327,7 +311,6 @@
 
         #endregion
 
-        private CheckBox modifyID_ck;
         private CheckBox title_ck;
         private CheckBox limba_ck;
         private CheckBox autor_ck;

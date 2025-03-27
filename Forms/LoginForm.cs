@@ -20,7 +20,6 @@ namespace GestiuneCarti
             string port = port_txt.Text;
             string serviceName = serviceName_txt.Text;
             string connectionString = $"User Id={username};Password={password};Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST={host})(PORT={port})))(CONNECT_DATA=(SERVICE_NAME={serviceName})));Connection Timeout=30;";
-            //string connectionString = $"User Id=SHARED_SCHEMA;Password=PAROLA;Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=FREEPDB1)));Connection Timeout=30;";
 
             using (OracleConnection conn = new OracleConnection(connectionString))
             {
