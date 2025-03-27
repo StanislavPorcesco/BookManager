@@ -46,6 +46,7 @@
             maximize_btn = new FontAwesome.Sharp.IconButton();
             close_btn = new FontAwesome.Sharp.IconButton();
             desktop_pnl = new Panel();
+            label1 = new Label();
             menu_pnl.SuspendLayout();
             logo_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)restart_btn).BeginInit();
@@ -57,6 +58,7 @@
             // menu_pnl
             // 
             menu_pnl.BackColor = Color.FromArgb(54, 54, 54);
+            menu_pnl.Controls.Add(label1);
             menu_pnl.Controls.Add(search_btn);
             menu_pnl.Controls.Add(modify_btn);
             menu_pnl.Controls.Add(delete_btn);
@@ -325,6 +327,18 @@
             desktop_pnl.Size = new Size(985, 595);
             desktop_pnl.TabIndex = 2;
             // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(9, 601);
+            label1.Name = "label1";
+            label1.Size = new Size(202, 17);
+            label1.TabIndex = 5;
+            label1.Text = "Dezvoltator: Porcesco Stanislav";
+            // 
             // MenuForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -342,6 +356,7 @@
             Text = "GestiuneCarti";
             Load += MenuForm_Load;
             menu_pnl.ResumeLayout(false);
+            menu_pnl.PerformLayout();
             logo_pnl.ResumeLayout(false);
             logo_pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)restart_btn).EndInit();
@@ -370,5 +385,6 @@
         private Panel desktop_pnl;
         private Label restart_lbl2;
         private Label restart_lbl;
+        private Label label1;
     }
 }
