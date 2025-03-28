@@ -57,24 +57,24 @@
             // 
             // id_carte_txt
             // 
-            id_carte_txt.Anchor = AnchorStyles.None;
+            id_carte_txt.Anchor = AnchorStyles.Top;
             id_carte_txt.BackColor = Color.FromArgb(54, 54, 54);
             id_carte_txt.BorderStyle = BorderStyle.FixedSingle;
             id_carte_txt.Cursor = Cursors.IBeam;
             id_carte_txt.Font = new Font("Segoe UI", 10.8F);
             id_carte_txt.ForeColor = Color.White;
-            id_carte_txt.Location = new Point(326, 99);
+            id_carte_txt.Location = new Point(326, 52);
             id_carte_txt.Name = "id_carte_txt";
             id_carte_txt.Size = new Size(334, 31);
             id_carte_txt.TabIndex = 0;
             // 
             // datelecartii_lbl
             // 
-            datelecartii_lbl.Anchor = AnchorStyles.None;
+            datelecartii_lbl.Anchor = AnchorStyles.Top;
             datelecartii_lbl.AutoSize = true;
             datelecartii_lbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             datelecartii_lbl.ForeColor = Color.White;
-            datelecartii_lbl.Location = new Point(412, 55);
+            datelecartii_lbl.Location = new Point(418, 3);
             datelecartii_lbl.Name = "datelecartii_lbl";
             datelecartii_lbl.Size = new Size(150, 31);
             datelecartii_lbl.TabIndex = 1;
@@ -82,117 +82,117 @@
             // 
             // titlu_txt
             // 
-            titlu_txt.Anchor = AnchorStyles.None;
+            titlu_txt.Anchor = AnchorStyles.Top;
             titlu_txt.BackColor = Color.FromArgb(54, 54, 54);
             titlu_txt.BorderStyle = BorderStyle.FixedSingle;
             titlu_txt.Cursor = Cursors.IBeam;
             titlu_txt.Font = new Font("Segoe UI", 10.8F);
             titlu_txt.ForeColor = Color.White;
-            titlu_txt.Location = new Point(326, 135);
+            titlu_txt.Location = new Point(326, 102);
             titlu_txt.Name = "titlu_txt";
             titlu_txt.Size = new Size(334, 31);
             titlu_txt.TabIndex = 0;
             // 
             // autor_txt
             // 
-            autor_txt.Anchor = AnchorStyles.None;
+            autor_txt.Anchor = AnchorStyles.Top;
             autor_txt.BackColor = Color.FromArgb(54, 54, 54);
             autor_txt.BorderStyle = BorderStyle.FixedSingle;
             autor_txt.Cursor = Cursors.IBeam;
             autor_txt.Font = new Font("Segoe UI", 10.8F);
             autor_txt.ForeColor = Color.White;
-            autor_txt.Location = new Point(326, 171);
+            autor_txt.Location = new Point(326, 152);
             autor_txt.Name = "autor_txt";
             autor_txt.Size = new Size(334, 31);
             autor_txt.TabIndex = 0;
             // 
             // loc_pub_txt
             // 
-            loc_pub_txt.Anchor = AnchorStyles.None;
+            loc_pub_txt.Anchor = AnchorStyles.Top;
             loc_pub_txt.BackColor = Color.FromArgb(54, 54, 54);
             loc_pub_txt.BorderStyle = BorderStyle.FixedSingle;
             loc_pub_txt.Cursor = Cursors.IBeam;
             loc_pub_txt.Font = new Font("Segoe UI", 10.8F);
             loc_pub_txt.ForeColor = Color.White;
-            loc_pub_txt.Location = new Point(326, 209);
+            loc_pub_txt.Location = new Point(326, 202);
             loc_pub_txt.Name = "loc_pub_txt";
             loc_pub_txt.Size = new Size(334, 31);
             loc_pub_txt.TabIndex = 0;
             // 
             // an_pub_txt
             // 
-            an_pub_txt.Anchor = AnchorStyles.None;
+            an_pub_txt.Anchor = AnchorStyles.Top;
             an_pub_txt.BackColor = Color.FromArgb(54, 54, 54);
             an_pub_txt.BorderStyle = BorderStyle.FixedSingle;
             an_pub_txt.Cursor = Cursors.IBeam;
             an_pub_txt.Font = new Font("Segoe UI", 10.8F);
             an_pub_txt.ForeColor = Color.White;
-            an_pub_txt.Location = new Point(326, 246);
+            an_pub_txt.Location = new Point(326, 252);
             an_pub_txt.Name = "an_pub_txt";
             an_pub_txt.Size = new Size(334, 31);
             an_pub_txt.TabIndex = 0;
             // 
             // id_czu_txt
             // 
-            id_czu_txt.Anchor = AnchorStyles.None;
+            id_czu_txt.Anchor = AnchorStyles.Top;
             id_czu_txt.BackColor = Color.FromArgb(54, 54, 54);
             id_czu_txt.BorderStyle = BorderStyle.FixedSingle;
             id_czu_txt.Cursor = Cursors.IBeam;
             id_czu_txt.Font = new Font("Segoe UI", 10.8F);
             id_czu_txt.ForeColor = Color.White;
-            id_czu_txt.Location = new Point(326, 283);
+            id_czu_txt.Location = new Point(326, 302);
             id_czu_txt.Name = "id_czu_txt";
             id_czu_txt.Size = new Size(334, 31);
             id_czu_txt.TabIndex = 0;
             // 
             // pret_txt
             // 
-            pret_txt.Anchor = AnchorStyles.None;
+            pret_txt.Anchor = AnchorStyles.Top;
             pret_txt.BackColor = Color.FromArgb(54, 54, 54);
             pret_txt.BorderStyle = BorderStyle.FixedSingle;
             pret_txt.Cursor = Cursors.IBeam;
             pret_txt.Font = new Font("Segoe UI", 10.8F);
             pret_txt.ForeColor = Color.White;
-            pret_txt.Location = new Point(326, 320);
+            pret_txt.Location = new Point(326, 352);
             pret_txt.Name = "pret_txt";
             pret_txt.Size = new Size(334, 31);
             pret_txt.TabIndex = 0;
             // 
             // nr_exemp_txt
             // 
-            nr_exemp_txt.Anchor = AnchorStyles.None;
+            nr_exemp_txt.Anchor = AnchorStyles.Top;
             nr_exemp_txt.BackColor = Color.FromArgb(54, 54, 54);
             nr_exemp_txt.BorderStyle = BorderStyle.FixedSingle;
             nr_exemp_txt.Cursor = Cursors.IBeam;
             nr_exemp_txt.Font = new Font("Segoe UI", 10.8F);
             nr_exemp_txt.ForeColor = Color.White;
-            nr_exemp_txt.Location = new Point(326, 357);
+            nr_exemp_txt.Location = new Point(326, 402);
             nr_exemp_txt.Name = "nr_exemp_txt";
             nr_exemp_txt.Size = new Size(334, 31);
             nr_exemp_txt.TabIndex = 0;
             // 
             // limba_txt
             // 
-            limba_txt.Anchor = AnchorStyles.None;
+            limba_txt.Anchor = AnchorStyles.Top;
             limba_txt.BackColor = Color.FromArgb(54, 54, 54);
             limba_txt.BorderStyle = BorderStyle.FixedSingle;
             limba_txt.Cursor = Cursors.IBeam;
             limba_txt.Font = new Font("Segoe UI", 10.8F);
             limba_txt.ForeColor = Color.White;
-            limba_txt.Location = new Point(326, 394);
+            limba_txt.Location = new Point(326, 452);
             limba_txt.Name = "limba_txt";
             limba_txt.Size = new Size(334, 31);
             limba_txt.TabIndex = 0;
             // 
             // add_book_btn
             // 
-            add_book_btn.Anchor = AnchorStyles.None;
+            add_book_btn.Anchor = AnchorStyles.Top;
             add_book_btn.BackColor = Color.FromArgb(54, 54, 54);
             add_book_btn.FlatAppearance.BorderColor = Color.DimGray;
             add_book_btn.FlatStyle = FlatStyle.Flat;
             add_book_btn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             add_book_btn.ForeColor = Color.White;
-            add_book_btn.Location = new Point(326, 449);
+            add_book_btn.Location = new Point(326, 498);
             add_book_btn.Name = "add_book_btn";
             add_book_btn.Size = new Size(334, 48);
             add_book_btn.TabIndex = 2;
@@ -202,11 +202,11 @@
             // 
             // id_carte_lbl
             // 
-            id_carte_lbl.Anchor = AnchorStyles.None;
+            id_carte_lbl.Anchor = AnchorStyles.Top;
             id_carte_lbl.AutoSize = true;
             id_carte_lbl.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             id_carte_lbl.ForeColor = Color.White;
-            id_carte_lbl.Location = new Point(219, 102);
+            id_carte_lbl.Location = new Point(219, 54);
             id_carte_lbl.Name = "id_carte_lbl";
             id_carte_lbl.Size = new Size(82, 25);
             id_carte_lbl.TabIndex = 1;
@@ -214,11 +214,11 @@
             // 
             // titlu_lbl
             // 
-            titlu_lbl.Anchor = AnchorStyles.None;
+            titlu_lbl.Anchor = AnchorStyles.Top;
             titlu_lbl.AutoSize = true;
             titlu_lbl.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             titlu_lbl.ForeColor = Color.White;
-            titlu_lbl.Location = new Point(250, 138);
+            titlu_lbl.Location = new Point(250, 104);
             titlu_lbl.Name = "titlu_lbl";
             titlu_lbl.Size = new Size(51, 25);
             titlu_lbl.TabIndex = 1;
@@ -226,11 +226,11 @@
             // 
             // autor_lbl
             // 
-            autor_lbl.Anchor = AnchorStyles.None;
+            autor_lbl.Anchor = AnchorStyles.Top;
             autor_lbl.AutoSize = true;
             autor_lbl.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             autor_lbl.ForeColor = Color.White;
-            autor_lbl.Location = new Point(240, 174);
+            autor_lbl.Location = new Point(240, 154);
             autor_lbl.Name = "autor_lbl";
             autor_lbl.Size = new Size(61, 25);
             autor_lbl.TabIndex = 1;
@@ -238,11 +238,11 @@
             // 
             // loc_pub_lbl
             // 
-            loc_pub_lbl.Anchor = AnchorStyles.None;
+            loc_pub_lbl.Anchor = AnchorStyles.Top;
             loc_pub_lbl.AutoSize = true;
             loc_pub_lbl.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loc_pub_lbl.ForeColor = Color.White;
-            loc_pub_lbl.Location = new Point(160, 212);
+            loc_pub_lbl.Location = new Point(160, 204);
             loc_pub_lbl.Name = "loc_pub_lbl";
             loc_pub_lbl.Size = new Size(141, 25);
             loc_pub_lbl.TabIndex = 1;
@@ -250,11 +250,11 @@
             // 
             // an_pub_lbl
             // 
-            an_pub_lbl.Anchor = AnchorStyles.None;
+            an_pub_lbl.Anchor = AnchorStyles.Top;
             an_pub_lbl.AutoSize = true;
             an_pub_lbl.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             an_pub_lbl.ForeColor = Color.White;
-            an_pub_lbl.Location = new Point(165, 249);
+            an_pub_lbl.Location = new Point(165, 254);
             an_pub_lbl.Name = "an_pub_lbl";
             an_pub_lbl.Size = new Size(136, 25);
             an_pub_lbl.TabIndex = 1;
@@ -262,11 +262,11 @@
             // 
             // id_czu_lbl
             // 
-            id_czu_lbl.Anchor = AnchorStyles.None;
+            id_czu_lbl.Anchor = AnchorStyles.Top;
             id_czu_lbl.AutoSize = true;
             id_czu_lbl.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             id_czu_lbl.ForeColor = Color.White;
-            id_czu_lbl.Location = new Point(230, 286);
+            id_czu_lbl.Location = new Point(230, 304);
             id_czu_lbl.Name = "id_czu_lbl";
             id_czu_lbl.Size = new Size(71, 25);
             id_czu_lbl.TabIndex = 1;
@@ -274,11 +274,11 @@
             // 
             // pret_lbl
             // 
-            pret_lbl.Anchor = AnchorStyles.None;
+            pret_lbl.Anchor = AnchorStyles.Top;
             pret_lbl.AutoSize = true;
             pret_lbl.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             pret_lbl.ForeColor = Color.White;
-            pret_lbl.Location = new Point(254, 323);
+            pret_lbl.Location = new Point(254, 354);
             pret_lbl.Name = "pret_lbl";
             pret_lbl.Size = new Size(47, 25);
             pret_lbl.TabIndex = 1;
@@ -286,11 +286,11 @@
             // 
             // nr_exemp_lbl
             // 
-            nr_exemp_lbl.Anchor = AnchorStyles.None;
+            nr_exemp_lbl.Anchor = AnchorStyles.Top;
             nr_exemp_lbl.AutoSize = true;
             nr_exemp_lbl.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nr_exemp_lbl.ForeColor = Color.White;
-            nr_exemp_lbl.Location = new Point(137, 360);
+            nr_exemp_lbl.Location = new Point(137, 404);
             nr_exemp_lbl.Name = "nr_exemp_lbl";
             nr_exemp_lbl.Size = new Size(164, 25);
             nr_exemp_lbl.TabIndex = 1;
@@ -298,11 +298,11 @@
             // 
             // limba_lbl
             // 
-            limba_lbl.Anchor = AnchorStyles.None;
+            limba_lbl.Anchor = AnchorStyles.Top;
             limba_lbl.AutoSize = true;
             limba_lbl.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             limba_lbl.ForeColor = Color.White;
-            limba_lbl.Location = new Point(238, 397);
+            limba_lbl.Location = new Point(238, 454);
             limba_lbl.Name = "limba_lbl";
             limba_lbl.Size = new Size(63, 25);
             limba_lbl.TabIndex = 1;
@@ -328,7 +328,7 @@
             panel1.BackColor = Color.FromArgb(54, 54, 54);
             panel1.Controls.Add(queryOutput_lbl);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 533);
+            panel1.Location = new Point(0, 648);
             panel1.Name = "panel1";
             panel1.Size = new Size(982, 35);
             panel1.TabIndex = 4;
@@ -338,7 +338,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
-            ClientSize = new Size(982, 568);
+            ClientSize = new Size(982, 683);
             Controls.Add(panel1);
             Controls.Add(add_book_btn);
             Controls.Add(limba_lbl);
